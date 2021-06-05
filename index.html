@@ -11,50 +11,33 @@
     <meta name="author" content="">
     <meta name="generator" content="">
 
-    <!-- jquery 3.6.0 -->
-    <script src="assets/dist/js/jquery-3.6.0.min.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- fontawesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <!-- main.css -->
-    <link rel="stylesheet" href="assets/dist/css/main.css">
+    <!-- jquery 3.6.0 -->
+    <script src="assets/dist/js/jquery-3.6.0.min.js"></script>
+    <style>
+        
+    </style>
 
     <title>KIMING Project</title>
 </head>
 
 <body>
-    <!-- header -->
-    <div id="header">
+    
+    <div id="header"></div>
 
-    </div>
-    <!-- header -->
-    <!-- body -->
-    <main id="body" class="container-fluid my-5">
-        <div class="container">
-            <!-- topbar -->
-            <div class="d-flex justify-content-between">
-                <span class="fs-3">친구</span>
-                <span class="row row-cols-2 g-3 align-content-center">
-                    <a href="#"><i class="fas fa-search"></i></a>
-                    <a href="#"><i class="fas fa-user-plus"></i></a>
-                </span>
+    <main id="body" class="container my-5">
+        <div class="row justify-content-center g-3">
+            <div class="col-8 bg-light p-5 row justify-content-center g-3">
+                <div class="col-5" style="font-size:12px">
+                <input class="form-control" type="email" name="email" id="email" placeholder="카카오계정 (이메일 또는 전화번호)">
+                <input type="password" name="" id="">
             </div>
-            <!-- topbar -->
-
-            <!-- myCard -->
-            <div class="w-100 shadow rounded-3 p-3">
-                <span class="profile shadow-sm"><img class="profile" src="resources/img/profile.png" alt="profile"></span>
             </div>
-            <!-- myCard -->
         </div>
     </main>
-    <!-- body -->
-    <!-- footer -->
-    <div id="footer">
 
-    </div>
-    <!-- footer -->
+    <div id="footer"></div>
 
     <script>
         // $.ajax({
@@ -76,7 +59,6 @@
         $('#header').load('header.html');
         $('#footer').load('footer.html');
     </script>
-    <script src="assets/dist/js/main.js"></script>
 
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 </body>
