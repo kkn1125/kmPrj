@@ -51,6 +51,16 @@ i.collapsed{
     transform: rotate(-180deg);
 }
 
+.icon-hover:hover div.icon-text-hover{
+    color: black !important;
+    transition: .3s;
+}
+
+.icon-hover:hover i::before{
+    text-shadow: rgba(0,0,0,0.3) 2px 2px 0.2rem !important;
+    transition: .5s;
+}
+
 .fs-08{font-size: 0.8rem;}
 .fs-07{font-size: 0.7rem;}
 .fs-06{font-size: 0.6rem;}
@@ -68,7 +78,7 @@ i.collapsed{
     left: -80px;
     height: 100%;
     width: 100px;
-    position: absolute;
+    position: fixed;
     top: 0;
     background-color: lightpink;
     padding-top: 20px;
