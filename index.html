@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="generator" content="">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jquery 3.6.0 -->
+    <script src="assets/dist/js/jquery-3.6.0.min.js"></script>
+    <style>
+        
+    </style>
+
+    <title>KIMING Project</title>
+</head>
+
+<body>
+    
+    <div id="header"></div>
+
+    <main id="body" class="container my-5">
+        <div class="row justify-content-center g-3">
+            <div class="col-8 bg-light p-5 row justify-content-center g-3">
+                <div class="col-5" style="font-size:12px">
+                <input class="form-control" type="email" name="email" id="email" placeholder="카카오계정 (이메일 또는 전화번호)">
+                <input type="password" name="" id="">
+            </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // $.ajax({
+        //     url:'header.html',
+        //     type:'get',
+        //     data:{id:'test'},
+        //     contentType:'application/x-www-form-urlencoded',
+        //     dataType:'html',
+        //     // dataType:'application/text',
+        //     success:function(data){
+        //         console.log('success');
+        //         $('#header').html(data);
+        //     },
+        //     error:function(xhr, err, method){
+        //         console.error(err);
+        //         console.error(method);
+        //     }
+        // })
+        $('#header').load('header.html');
+        $('#footer').load('footer.html');
+    </script>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
