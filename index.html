@@ -15,8 +15,48 @@
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- jquery 3.6.0 -->
     <script src="assets/dist/js/jquery-3.6.0.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <style>
+        .sidebar:hover{
+            left: 0;
+        }
+        .sidebar {
+            transition: 0.3s;
+            left: -80px;
+            height: 100%;
+            width: 100px;
+            position: absolute;
+            top: 0;
+            background-color: lightpink;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            padding: 10px 40px;
+            text-decoration: none;
+            font-size: 20px;
+            color: blue;
+            display: block;
+        }
+        /* width */
+        ::-webkit-scrollbar {
+        width: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        }
         
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+        }
     </style>
 
     <title>KIMING Project</title>
@@ -25,17 +65,42 @@
 <body>
     
     <div id="header"></div>
+    <div id="sidebar" class="sidebar">
+        <a href="#"><i class="fas fa-user fa-lg" style="color: gray;"></i></a>
+        <a href="#"><i class="fas fa-comment fa-lg" style="color: gray;"></i></a>
+        <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: gray"></i></a>
+        <a href="#"><i class="fas fa-cog fa-lg" style="color: gray;"></i></a>
+        <a href="#"><i class="far fa-bell fa-lg" style="color: gray;"></i></a>
+    </div>
+    <p>
+        Lorem ipsum dolor sit amet, has id brute equidem necessitatibus, pro in audiam euripidis. In his tollit euismod. Pri dicam imperdiet interesset an, eu qui legimus sensibus definitiones. Sea te gubergren adipiscing assueverit.
 
-    <main id="body" class="container my-5">
-        <div class="row justify-content-center g-3">
-            <div class="col-8 bg-light p-5 row justify-content-center g-3">
-                <div class="col-5" style="font-size:12px">
-                <input class="form-control" type="email" name="email" id="email" placeholder="카카오계정 (이메일 또는 전화번호)">
-                <input type="password" name="" id="">
-            </div>
-            </div>
-        </div>
-    </main>
+        Eu nobis sanctus accommodare mea, at honestatis disputando eum. Amet timeam vituperatoribus eos ut, regione fierent eu pro, sea graece altera disputando at. Te ullum essent mel, omnis fabellas te per. Qui an euripidis maiestatis eloquentiam, dico dicta erant ad vim, vim in virtute nominati tractatos. In pro duis deseruisse consetetur, at sea minimum ocurreret gloriatur, eu mea timeam deserunt. Choro democritum ut mei, eius labores nonumes est eu. Numquam equidem electram ei sit, eu vim iriure signiferumque.
+
+        Posidonium vituperatoribus ad mei, inermis platonem ius ad. Ea harum veniam mediocritatem eos, albucius consectetuer id sed. Oratio vocent molestiae eu nam, sea cu eruditi dolorum vulputate, has amet dolor sententiae at. Eum eu wisi possit, agam tempor fuisset id quo. Diam choro oratio nam cu, possit feugiat accommodare sea eu, falli tempor et sed. Habeo augue ei eum.
+
+        No tritani accusamus sea, his appareat accusata conceptam ei, mei ei vivendo singulis legendos. Ad affert invidunt mnesarchum nec. Cum eu autem aeque. Pro an stet dictas cotidieque, pri at alii utamur iisque. Autem splendide an sed, purto probo id mea.
+
+        Pro diceret equidem qualisque no, ea sed ponderum imperdiet, vivendo placerat qui te. Cu vel aliquando rationibus consectetuer, commodo alterum dissentiet his ne. Sea malis exerci postulant ut, cum quas platonem laboramus in. Elitr ocurreret per ne. Sea facete sententiae ea, usu id populo contentiones, erant partem facete an mel. Aperiri menandri in his, ex unum tota ius. No unum ubique splendide has.
+        Lorem ipsum dolor sit amet, has id brute equidem necessitatibus, pro in audiam euripidis. In his tollit euismod. Pri dicam imperdiet interesset an, eu qui legimus sensibus definitiones. Sea te gubergren adipiscing assueverit.
+
+        Eu nobis sanctus accommodare mea, at honestatis disputando eum. Amet timeam vituperatoribus eos ut, regione fierent eu pro, sea graece altera disputando at. Te ullum essent mel, omnis fabellas te per. Qui an euripidis maiestatis eloquentiam, dico dicta erant ad vim, vim in virtute nominati tractatos. In pro duis deseruisse consetetur, at sea minimum ocurreret gloriatur, eu mea timeam deserunt. Choro democritum ut mei, eius labores nonumes est eu. Numquam equidem electram ei sit, eu vim iriure signiferumque.
+
+        Posidonium vituperatoribus ad mei, inermis platonem ius ad. Ea harum veniam mediocritatem eos, albucius consectetuer id sed. Oratio vocent molestiae eu nam, sea cu eruditi dolorum vulputate, has amet dolor sententiae at. Eum eu wisi possit, agam tempor fuisset id quo. Diam choro oratio nam cu, possit feugiat accommodare sea eu, falli tempor et sed. Habeo augue ei eum.
+
+        No tritani accusamus sea, his appareat accusata conceptam ei, mei ei vivendo singulis legendos. Ad affert invidunt mnesarchum nec. Cum eu autem aeque. Pro an stet dictas cotidieque, pri at alii utamur iisque. Autem splendide an sed, purto probo id mea.
+
+        Pro diceret equidem qualisque no, ea sed ponderum imperdiet, vivendo placerat qui te. Cu vel aliquando rationibus consectetuer, commodo alterum dissentiet his ne. Sea malis exerci postulant ut, cum quas platonem laboramus in. Elitr ocurreret per ne. Sea facete sententiae ea, usu id populo contentiones, erant partem facete an mel. Aperiri menandri in his, ex unum tota ius. No unum ubique splendide has.
+        Lorem ipsum dolor sit amet, has id brute equidem necessitatibus, pro in audiam euripidis. In his tollit euismod. Pri dicam imperdiet interesset an, eu qui legimus sensibus definitiones. Sea te gubergren adipiscing assueverit.
+
+        Eu nobis sanctus accommodare mea, at honestatis disputando eum. Amet timeam vituperatoribus eos ut, regione fierent eu pro, sea graece altera disputando at. Te ullum essent mel, omnis fabellas te per. Qui an euripidis maiestatis eloquentiam, dico dicta erant ad vim, vim in virtute nominati tractatos. In pro duis deseruisse consetetur, at sea minimum ocurreret gloriatur, eu mea timeam deserunt. Choro democritum ut mei, eius labores nonumes est eu. Numquam equidem electram ei sit, eu vim iriure signiferumque.
+
+        Posidonium vituperatoribus ad mei, inermis platonem ius ad. Ea harum veniam mediocritatem eos, albucius consectetuer id sed. Oratio vocent molestiae eu nam, sea cu eruditi dolorum vulputate, has amet dolor sententiae at. Eum eu wisi possit, agam tempor fuisset id quo. Diam choro oratio nam cu, possit feugiat accommodare sea eu, falli tempor et sed. Habeo augue ei eum.
+
+        No tritani accusamus sea, his appareat accusata conceptam ei, mei ei vivendo singulis legendos. Ad affert invidunt mnesarchum nec. Cum eu autem aeque. Pro an stet dictas cotidieque, pri at alii utamur iisque. Autem splendide an sed, purto probo id mea.
+
+        Pro diceret equidem qualisque no, ea sed ponderum imperdiet, vivendo placerat qui te. Cu vel aliquando rationibus consectetuer, commodo alterum dissentiet his ne. Sea malis exerci postulant ut, cum quas platonem laboramus in. Elitr ocurreret per ne. Sea facete sententiae ea, usu id populo contentiones, erant partem facete an mel. Aperiri menandri in his, ex unum tota ius. No unum ubique splendide has.
+    </p>
 
     <div id="footer"></div>
 
