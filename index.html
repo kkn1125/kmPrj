@@ -42,17 +42,14 @@
         ::-webkit-scrollbar {
         width: 10px;
         }
-
         /* Track */
         ::-webkit-scrollbar-track {
         background: #f1f1f1; 
         }
-        
         /* Handle */
         ::-webkit-scrollbar-thumb {
         background: #888; 
         }
-
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
         background: #555; 
@@ -65,12 +62,16 @@
 <body>
     
     <div id="header"></div>
-    <div id="sidebar" class="sidebar">
-        <a href="#"><i class="fas fa-user fa-lg" style="color: gray;"></i></a>
-        <a href="#"><i class="fas fa-comment fa-lg" style="color: gray;"></i></a>
-        <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: gray"></i></a>
-        <a href="#"><i class="fas fa-cog fa-lg" style="color: gray;"></i></a>
-        <a href="#"><i class="far fa-bell fa-lg" style="color: gray;"></i></a>
+    <div id="sidebar" class="sidebar d-flex flex-column justify-content-between">
+        <span>
+            <a href="#"><i class="fas fa-user fa-lg" style="color: gray;"></i></a>
+            <a href="#"><i class="fas fa-comment fa-lg" style="color: gray;"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: gray"></i></a>
+        </span>
+        <span>
+            <a href="#"><i class="fas fa-cog fa-lg" style="color: gray;"></i></a>
+            <a href="#"><i class="far fa-bell fa-lg" style="color: gray;"></i></a>
+        </span>
     </div>
     <p>
         Lorem ipsum dolor sit amet, has id brute equidem necessitatibus, pro in audiam euripidis. In his tollit euismod. Pri dicam imperdiet interesset an, eu qui legimus sensibus definitiones. Sea te gubergren adipiscing assueverit.
