@@ -16,3 +16,15 @@ $('.toggleArrow').on("click", function(){
     var target = $(this).data("for");
     $(target).fadeToggle();
 });
+
+$('a#search').on("click", function(){
+    if($('input[data-search').attr("data-search") == "collapse"){
+        $('input[data-search="collapse"]').attr("data-search", "active");
+    } else {
+        $('input[data-search="active"').attr("data-search", "collapse");
+    }
+});
+
+$('[data-name]').on('click',function(){
+    $('#modal')
+});

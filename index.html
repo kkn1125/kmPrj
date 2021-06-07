@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <!-- Required meta tags -->
@@ -25,8 +25,9 @@
 
 <body>
     <!-- header -->
-    <div id="header">
-        <h3>임시 링크</h3>
+    <div id="header" class="container">
+        <h3 data-select="unselect">임시 링크</h3>
+        <a href="./views/login.html">로그인</a>
         <a href="./index.html">home</a>
         <a href="./views/chat.html">chat</a>
         <a href="./views/settings.html">settings</a>
@@ -47,20 +48,27 @@
 
     <!-- body -->
     <main id="body" class="container-fluid my-5">
-        <div class="container">
+        <div class="container px-5">
             <!-- topbar -->
             <div class="d-flex justify-content-between my-3">
-                <span class="fs-3">친구</span>
-                <span class="row row-cols-2 g-3 align-content-center">
-                    <a href="#"><i class="fas fa-search"></i></a>
-                    <a href="#"><i class="fas fa-user-plus"></i></a>
+                <span class="fs-3" data-select="unselect">친구</span>
+                <span class="row row-cols-2 g-3 justify-content-end align-content-center w-50">
+                    <div class="d-flex justify-content-end g-3 position-relative">
+                        <input class="d-inline-block form-control position-absolute rounded-pill" type="text" data-search="collapse">
+                        <a href="#" id="search" class="px-2">
+                            <i class="fas fa-search"></i>
+                        </a>
+                        <a href="#" class="px-2">
+                            <i class="fas fa-user-plus"></i>
+                        </a>
+                    </div>
                 </span>
             </div>
             <!-- topbar -->
 
             <div id="for">
             <!-- Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect" data-name="card">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-secondary" src="resources/img/profile.png" alt="profile">
@@ -73,7 +81,7 @@
                         <!-- 상태글 -->
                         <span class="text-muted">Lorem ipsum dolor sit amet.</span>
                     </div>
-                    <div class="p-2 d-flex align-content-center">
+                    <div class="p-2 row align-content-center">
                         <span class="border border-info rounded-pill py-1 px-3 fs-08">testqwe</span>
                     </div>
                 </div>
@@ -83,7 +91,7 @@
             
             <hr>
             <!-- multi -->
-            <div class="text-muted fs-07 my-2 clearfix">
+            <div class="text-muted fs-07 my-2 clearfix" data-select="unselect">
                 내 멀티 프로필
                 <span class="float-end">
                     <a class="text-secondary py-1 mx-2">
@@ -94,7 +102,7 @@
 
             <div id="multi">
             <!-- Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect" data-name="card">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-light" src="resources/img/plus.png" alt="profile" style="opacity:0.3">
@@ -112,7 +120,7 @@
 
             <hr>
             <!-- birth -->
-            <div class="text-muted fs-07 my-2 clearfix">
+            <div class="text-muted fs-07 my-2 clearfix" data-select="unselect">
                 생일인 녀석들
                 <!-- <span class="badge bg-light text-muted">256</span> -->
                 <span class="float-end">
@@ -124,7 +132,7 @@
 
             <div id="birth">
             <!-- badge Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect" data-name="card">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-light" src="resources/img/cake.png" alt="profile">
@@ -142,7 +150,7 @@
 
             <hr>
             <!-- favorite -->
-            <div class="text-muted fs-07 my-2 clearfix">
+            <div class="text-muted fs-07 my-2 clearfix" data-select="unselect">
                 즐겨찾기
                 <!-- <span class="badge bg-light text-muted">256</span> -->
                 <span class="float-end">
@@ -154,7 +162,7 @@
 
             <div id="favorite">
             <!-- Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect" data-name="card">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-secondary" src="resources/img/profile.png" alt="profile">
@@ -167,14 +175,14 @@
                         <!-- 상태글 -->
                         <span class="text-muted">Lorem ipsum dolor sit amet.</span>
                     </div>
-                    <!-- <div class="p-2 d-flex align-content-center">
+                    <!-- <div class="p-2 row align-content-center">
                         <span class="border border-info rounded-pill py-1 px-3 fs-08">testqwe</span>
                     </div> -->
                 </div>
             </div>
             <!-- Card -->
             <!-- Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect" data-name="card">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-secondary" src="resources/img/profile.png" alt="profile">
@@ -187,7 +195,7 @@
                         <!-- 상태글 -->
                         <!-- <span class="text-muted">Lorem ipsum dolor sit amet.</span> -->
                     </div>
-                    <div class="p-2 d-flex align-content-center">
+                    <div class="p-2 row align-content-center">
                         <span class="border border-info rounded-pill py-1 px-3 fs-08">testqwe</span>
                     </div>
                 </div>
@@ -197,7 +205,7 @@
 
             <hr>
             <!-- favorite -->
-            <div class="text-muted fs-07 my-2 clearfix">
+            <div class="text-muted fs-07 my-2 clearfix" data-select="unselect">
                 채널
                 <!-- <span class="badge bg-light text-muted">256</span> -->
                 <span class="float-end">
@@ -208,7 +216,7 @@
             </div>
             <div id="channel">
             <!-- badge Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect" data-name="card">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-light" src="resources/img/plus.png" alt="profile">
@@ -223,7 +231,7 @@
             </div>
             <!-- badge Card -->
             <!-- badge Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect" data-name="card">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-light" src="resources/img/plus.png" alt="profile">
@@ -241,7 +249,7 @@
 
             <hr>
             <!-- friends -->
-            <div class="text-muted fs-07 my-2 clearfix">친구
+            <div class="text-muted fs-07 my-2 clearfix" data-select="unselect">친구
                 <span class="badge bg-light text-muted">256</span>
                 <span class="float-end">
                     <a class="text-secondary py-1 mx-2">
@@ -263,6 +271,44 @@
 
     </div>
     <!-- footer -->
+    
+    <!-- modal -->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <p>This is some placeholder content to show a vertically centered modal. We've added some extra copy here to show how vertically centering the modal works when combined with scrollable modals. We also use some repeated line breaks to quickly extend the height of the content, thereby triggering the scrolling. When content becomes longer than the prefedined max-height of modal, content will be cropped and scrollable within the modal.</p>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>Just like that.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- modal -->
 
     <script>
         // $.ajax({

@@ -58,7 +58,7 @@ i.collapsed{
 
 .icon-hover:hover i::before{
     text-shadow: rgba(0,0,0,0.3) 2px 2px 0.2rem !important;
-    transition: .5s;
+    transition: .3s;
 }
 
 .fs-08{font-size: 0.8rem;}
@@ -69,6 +69,28 @@ i.collapsed{
 .fs-03{font-size: 0.3rem;}
 .fs-02{font-size: 0.2rem;}
 .fs-01{font-size: 0.1rem;}
+
+[data-select="unselect"]{
+    user-select: none;
+}
+
+input[data-search]{
+    transition: .5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    right: 40px;
+    top:-30%;
+}
+
+[data-search="collapse"]{
+    width: 0px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+input[data-search="active"]{
+    visibility: visible;
+    opacity: 1;
+    width: 30vw !important;
+}
 
 .sidebar:hover{
     left: 0;

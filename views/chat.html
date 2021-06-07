@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <!-- Required meta tags -->
@@ -26,8 +26,9 @@
 
 <body>
     <!-- header -->
-    <div id="header">
+    <div id="header" class="container">
         <h3>임시 링크</h3>
+        <a href="./login.html">로그인</a>
         <a href="../index.html">home</a>
         <a href="./chat.html">chat</a>
         <a href="./settings.html">settings</a>
@@ -46,10 +47,10 @@
     </div>
     <!-- body -->
     <main id="body" class="container-fluid my-5">
-        <div class="container">
+        <div class="container px-5">
             <!-- topbar -->
             <div class="d-flex justify-content-between my-3">
-                <span class="position-relative fs-3 d-inline-flex justify-content-start align-items-center clearfix">
+                <span class="position-relative fs-3 d-inline-flex justify-content-start align-items-center clearfix" data-select="unselect">
                     채팅
                     <span class="float-end">
                         <a href="#" class="text-secondary py-1 mx-2 d-flex align-items-center" style="text-decoration: none;">
@@ -67,24 +68,27 @@
                         </div>
                     </div>
                 </span>
-                <span class="row row-cols-3 g-3 align-content-center">
-                    <a href="#"><i class="fas fa-search"></i></a>
-                    <a href="#"><i class="far fa-comments"></i></a>
-                    <a href="#"><i class="fas fa-comment-medical"></i></a>
+                <span class="row row-cols-3 g-3 justify-content-end align-content-center">
+                    <div class="d-flex justify-content-end g-3 position-relative">
+                        <input class="d-inline-block form-control position-absolute rounded-pill" type="text" data-search="collapse" style="right: 70px;" required="">
+                    <a href="#" id="search" class="px-2"><i class="fas fa-search"></i></a>
+                    <a href="#" class="px-2"><i class="far fa-comments"></i></a>
+                    <a href="#" class="px-2"><i class="fas fa-comment-medical"></i></a>
+                    </div>
                 </span>
             </div>
             <!-- topbar -->
 
             <div id="for">
             <!-- Card -->
-            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light">
+            <div class="d-flex flex-row g-2 shadow-sm rounded-3 p-3 my-2 border border-light" data-select="unselect">
                 <!-- profile img -->
                 <span class="profileWrap p-0 shadow-sm">
                     <img class="profile bg-secondary" src="../resources/img/profile.png" alt="profile">
                 </span>
                 <!-- 이름 및 상태글 -->
                 <div class="w-100 d-flex justify-content-between px-3">
-                    <div class="d-flex flex-column justify-content-center fs-08 py-2">
+                    <div class="d-flex flex-column justify-content-center fs-08">
                         <!-- nickname -->
                         <b>곰돌이</b>
                         <!-- 상태글 -->
