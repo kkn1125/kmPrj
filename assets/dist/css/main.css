@@ -106,6 +106,7 @@ input[data-search="active"]{
     top: 0;
     background-color: lightpink;
     padding-top: 20px;
+    z-index: 100;
 }
 .sidebar_mobile {
     height: 80px;
@@ -114,6 +115,7 @@ input[data-search="active"]{
     top: 0;
     background-color: lightpink;
     padding-top: 20px;
+    z-index: 100;
 }
 .sidebar a {
     padding: 10px 40px;
