@@ -1,3 +1,7 @@
+$(document).on("click", '[data-type="room"]', function(){
+    location.href="./chattingRoom.html";
+})
+
 var list = "";
 for(var i=0; i<10; i++){
     list += $('#for').html();
@@ -25,6 +29,7 @@ $('a#search').on("click", function(){
     }
 });
 
-$('[data-name]').on('click',function(){
-    $('#modal')
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
 });

@@ -1,5 +1,12 @@
+:root{
+    --main : #fff240;
+}
 hr{
     color: lightgray;
+}
+
+[data-type="message"]{
+    height: 50vh;
 }
 
 span[data-type="rec"]{
@@ -127,4 +134,111 @@ background: #888;
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 background: #555; 
+}
+
+/* 여기서부터 메인 컬러 설정 */
+
+.text-main {
+    color: #eeea08 !important
+}
+
+.bg-main {
+    background-color: #fff240 !important
+}
+
+.table-main {
+    --bs-table-bg: #fcfbcf;
+    --bs-table-striped-bg: #eeefc5;
+    --bs-table-striped-color: #000;
+    --bs-table-active-bg: #e3e0ba;
+    --bs-table-active-color: #000;
+    --bs-table-hover-bg: #e9e6bf;
+    --bs-table-hover-color: #000;
+    color: #000;
+    border-color: #e3e2ba
+}
+
+.btn-main {
+    color: #000;
+    background-color: var(--main);
+    border-color: var(--main)
+}
+
+.btn-main:hover {
+    color: #000;
+    background-color: #dff231;
+    border-color: #e4f225
+}
+
+.btn-check:focus+.btn-main,
+.btn-main:focus {
+    color: #000;
+    background-color: #dff231;
+    border-color: #e4f225;
+    box-shadow: 0 0 0 .25rem rgba(201, 204, 11, 0.5)
+}
+
+.btn-check:active+.btn-main,
+.btn-check:checked+.btn-main,
+.btn-main.active,
+.btn-main:active,
+.show>.btn-main.dropdown-toggle {
+    color: #000;
+    background-color: #f3f03d;
+    border-color: #f2ef25
+}
+
+.btn-check:active+.btn-main:focus,
+.btn-check:checked+.btn-main:focus,
+.btn-main.active:focus,
+.btn-main:active:focus,
+.show>.btn-main.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .25rem rgba(204, 191, 11, 0.5)
+}
+
+.btn-main.disabled,
+.btn-main:disabled {
+    color: #000;
+    background-color: var(--main);
+    border-color: var(--main)
+}
+
+.btn-outline-main {
+    color: #fde50d;
+    border-color: #fde50d;
+}
+
+.btn-outline-main:hover {
+    color: #fff;
+    background-color: #fde50d;
+    border-color: #fde50d;
+}
+
+.btn-check:focus+.btn-outline-main,
+.btn-outline-main:focus {
+    box-shadow: 0 0 0 .25rem rgba(253, 237, 13, 0.5);
+}
+
+.btn-check:active+.btn-outline-main,
+.btn-check:checked+.btn-outline-main,
+.btn-outline-main.active,
+.btn-outline-main.dropdown-toggle.show,
+.btn-outline-main:active {
+    color: #fff;
+    background-color: #fde50d;
+    border-color: #fde50d;
+}
+
+.btn-check:active+.btn-outline-main:focus,
+.btn-check:checked+.btn-outline-main:focus,
+.btn-outline-main.active:focus,
+.btn-outline-main.dropdown-toggle.show:focus,
+.btn-outline-main:active:focus {
+    box-shadow: 0 0 0 .25rem rgba(253, 229, 13, 0.5);
+}
+
+.btn-outline-main.disabled,
+.btn-outline-main:disabled {
+    color: #fde50d;
+    background-color: transparent;
 }
