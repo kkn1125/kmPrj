@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
@@ -18,15 +17,18 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <style>
-        .sidebar:hover{
-            left: 0;
-        }
-        .sidebar {
-            transition: 0.3s;
-            left: -80px;
+        .sidebar_pc {
             height: 100%;
             width: 100px;
-            position: absolute;
+            position: fixed;
+            top: 0;
+            background-color: lightpink;
+            padding-top: 20px;
+        }
+        .sidebar_mobile {
+            height: 80px;
+            width: 100%;
+            position: fixed;
             top: 0;
             background-color: lightpink;
             padding-top: 20px;
@@ -35,22 +37,21 @@
             padding: 10px 40px;
             text-decoration: none;
             font-size: 20px;
-            color: blue;
-            display: block;
+            display: inline-block;
         }
-        /* width */
+        i {
+            text-shadow: 2px 2px 2px gray;
+        }
+        /* scroll bar */
         ::-webkit-scrollbar {
         width: 10px;
         }
-        /* Track */
         ::-webkit-scrollbar-track {
         background: #f1f1f1; 
         }
-        /* Handle */
         ::-webkit-scrollbar-thumb {
         background: #888; 
         }
-        /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
         background: #555; 
         }
@@ -62,15 +63,26 @@
 <body>
     
     <div id="header"></div>
-    <div id="sidebar" class="sidebar d-flex flex-column justify-content-between">
+    <div id="sidebar_pc" class="sidebar sidebar_pc d-md-flex flex-column justify-content-between d-none">
         <span>
-            <a href="#"><i class="fas fa-user fa-lg" style="color: gray;"></i></a>
-            <a href="#"><i class="fas fa-comment fa-lg" style="color: gray;"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: gray"></i></a>
+            <a href="#"><i class="fas fa-user fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-comment fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: white"></i></a>
         </span>
         <span>
-            <a href="#"><i class="fas fa-cog fa-lg" style="color: gray;"></i></a>
-            <a href="#"><i class="far fa-bell fa-lg" style="color: gray;"></i></a>
+            <a href="#"><i class="fas fa-cog fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="far fa-bell fa-lg" style="color: white;"></i></a>
+        </span>
+    </div>
+    <div id="sidebar_mobile" class="sidebar sidebar_mobile d-inline-flex flex-row justify-content-between d-md-none">
+        <span>
+            <a href="#"><i class="fas fa-user fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-comment fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: white"></i></a>
+        </span>
+        <span>
+            <a href="#"><i class="fas fa-cog fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="far fa-bell fa-lg" style="color: white;"></i></a>
         </span>
     </div>
     <p>
