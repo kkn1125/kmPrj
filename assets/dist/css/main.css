@@ -98,15 +98,18 @@ input[data-search="active"]{
     opacity: 1;
     width: 30vw !important;
 }
-
-.sidebar:hover{
-    left: 0;
-}
-.sidebar {
-    transition: 0.3s;
-    left: -80px;
+/* min */
+.sidebar_pc {
     height: 100%;
     width: 100px;
+    position: fixed;
+    top: 0;
+    background-color: lightpink;
+    padding-top: 20px;
+}
+.sidebar_mobile {
+    height: 80px;
+    width: 100%;
     position: fixed;
     top: 0;
     background-color: lightpink;
@@ -116,9 +119,10 @@ input[data-search="active"]{
     padding: 10px 40px;
     text-decoration: none;
     font-size: 20px;
-    color: blue;
-    display: block;
+    display: inline-block;
 }
+/* min */
+
 /* width */
 ::-webkit-scrollbar {
 width: 10px;
