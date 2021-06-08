@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
 
     <!-- jquery 3.6.0 -->
     <script src="assets/dist/js/jquery-3.6.0.min.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- fontawesome -->
@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
     <!-- header -->
     <div id="header" class="container">
         <h3 data-select="unselect">임시 링크</h3>
@@ -34,15 +35,26 @@
     </div>
     <!-- header -->
 
-    <div id="sidebar" class="sidebar d-flex flex-column justify-content-between">
+    <div id="sidebar_pc" class="sidebar sidebar_pc d-md-flex flex-column justify-content-between d-none">
         <span>
-            <a href="#"><i class="fas fa-user fa-lg" style="color: gray;"></i></a>
-            <a href="#"><i class="fas fa-comment fa-lg" style="color: gray;"></i></a>
-            <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: gray"></i></a>
+            <a href="#"><i class="fas fa-user fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-comment fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: white"></i></a>
         </span>
         <span>
-            <a href="#"><i class="fas fa-cog fa-lg" style="color: gray;"></i></a>
-            <a href="#"><i class="far fa-bell fa-lg" style="color: gray;"></i></a>
+            <a href="#"><i class="fas fa-cog fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="far fa-bell fa-lg" style="color: white;"></i></a>
+        </span>
+    </div>
+    <div id="sidebar_mobile" class="sidebar sidebar_mobile d-inline-flex flex-row justify-content-between d-md-none">
+        <span>
+            <a href="#"><i class="fas fa-user fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-comment fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="fas fa-ellipsis-h fa-lg" style="color: white"></i></a>
+        </span>
+        <span>
+            <a href="#"><i class="fas fa-cog fa-lg" style="color: white;"></i></a>
+            <a href="#"><i class="far fa-bell fa-lg" style="color: white;"></i></a>
         </span>
     </div>
 
