@@ -27,9 +27,9 @@ public class UserDAO implements IUserDAO
 	
 	@Override
 	public boolean insert(User user) {
+		
 		System.out.println("insert() run...");
 		
-		List<User> userList = new ArrayList<User>();
 		String sql = "";
 		
 		try
@@ -39,20 +39,22 @@ public class UserDAO implements IUserDAO
 			st = con.prepareStatement(sql);
 			st.setInt(1, user.getNum());
 			rs = st.executeQuery();
+			
 			if(!rs.next())
 			{
-				sql = "INSERT INTO user (id, pw, name, gender, birth, address, zip, email, profileImg, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+				sql = "INSERT INTO user (id, pw, email, name, phone, carrier, birth, address, zip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 				st = con.prepareStatement(sql);
 				st.setString(1, user.getId());
 				st.setString(2, user.getPw());
-				st.setString(3, user.getName());
-				st.setBoolean(4, user.isGender());
-				st.setDate(5, user.getBirth());
-				st.setString(6, user.getAddress());
-				st.setInt(7, user.getZip());
-				st.setString(8, user.getEmail());
-				st.setString(9, user.getProfileImg());
-				st.setString(10, user.getComment());
+				st.setString(3, user.getEmail());
+				st.setString(4, user.getName());
+				st.setString(5, user.getPhone());
+				st.setString(6, user.getCarrier());
+				st.setDate(7, user.getBirth());
+				st.setString(8, user.getAddress());
+				st.setInt(9, user.getZip());
+				
+				st.executeUpdate();
 			}
 		}
 		catch (SQLException e)
@@ -74,23 +76,151 @@ public class UserDAO implements IUserDAO
 		}
 		return false;
 	}
+	
+	@Override
+	public List<User> select(String items, String text, int pageNum) {
+		
+		int limit = 10;
+		int start = (pageNum - 1) * limit;
+		int index = start + 1;
+		
+		String sql = "";
+		
+		try
+		{
+			sql = "SELECT * FROM user where "+items+ " like '%" +text+ "%'";
+			con = dataSource.getConnection();
+			st = con.prepareStatement(sql);
+			rs = st.executeQuery();
+			
+			List<User> userList = new ArrayList<User>();
+			
+			while(rs.absolute(index)) {
+				User user = new User();
+				user.setNum(rs.getInt("num"));
+				user.setId(rs.getString("id"));
+				user.setEmail(rs.getString("email"));
+				user.setName(rs.getString("name"));
+				user.setPhone(rs.getString("phone"));
+				user.setCarrier(rs.getString("carrier"));
+				user.setBirth(rs.getDate("birth"));
+				user.setAddress(rs.getString("address"));
+				user.setAddress(rs.getString("address"));
+				user.setZip(rs.getInt("zip"));
+				
+				userList.add(user);
+				
+				if(index < (start + limit))
+					index ++;
+				else
+					break;
+			}
+			return userList;
+			
+		}
+		catch (SQLException e)
+		{
+			System.out.println("select() Error : " + e);
+		}
+		finally
+		{
+			try
+			{
+				if(rs != null) rs.close();
+				if(st != null) st.close();
+				if(con != null) con.close();
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public boolean update(User user) {
-		// TODO Auto-generated method stub
+		
+		String sql = "";
+		
+		try
+		{
+			sql = "SELECT * FROM user WHERE num = ?";
+			con = dataSource.getConnection();
+			st = con.prepareStatement(sql);
+			st.setInt(1, user.getNum());
+			rs = st.executeQuery();
+			
+			if(!rs.next())
+			{
+				sql = "UPDATE user set id=?, pw=?, email=?, name=?, phone=?, carrier=?, birth=?, address=?, zip=? WHERE num=?";
+				st = con.prepareStatement(sql);
+				st.setString(1, user.getId());
+				st.setString(2, user.getPw());
+				st.setString(3, user.getEmail());
+				st.setString(4, user.getName());
+				st.setString(5, user.getPhone());
+				st.setString(6, user.getCarrier());
+				st.setDate(7, user.getBirth());
+				st.setString(8, user.getAddress());
+				st.setInt(9, user.getZip());
+				
+				st.executeUpdate();
+			}
+		}
+		catch (SQLException e)
+		{
+			System.out.println("update() Error : " + e);
+		}
+		finally
+		{
+			try
+			{
+				if(rs != null) rs.close();
+				if(st != null) st.close();
+				if(con != null) con.close();
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
 		return false;
 	}
 
 	@Override
 	public boolean delete(int num) {
-		// TODO Auto-generated method stub
+		
+		String sql = "";
+		
+		try
+		{
+			sql = "DELETE * FROM user WHERE num = ?";
+			con = dataSource.getConnection();
+			st = con.prepareStatement(sql);
+			st.setInt(1, num);
+			st.executeUpdate();
+			
+		}
+		catch (SQLException e)
+		{
+			System.out.println("delete() Error : " + e);
+		}
+		finally
+		{
+			try
+			{
+				if(rs != null) rs.close();
+				if(st != null) st.close();
+				if(con != null) con.close();
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
 		return false;
 	}
 
-	@Override
-	public User select(String items, String text, String pageNum) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+	// ♡ 힛
 }
