@@ -76,67 +76,6 @@ public class UserDAO implements IUserDAO
 		}
 		return false;
 	}
-	
-	@Override
-	public List<User> select(String items, String text, int pageNum) {
-		
-		int limit = 10;
-		int start = (pageNum - 1) * limit;
-		int index = start + 1;
-		
-		String sql = "";
-		
-		try
-		{
-			sql = "SELECT * FROM user where "+items+ " like '%" +text+ "%'";
-			con = dataSource.getConnection();
-			st = con.prepareStatement(sql);
-			rs = st.executeQuery();
-			
-			List<User> userList = new ArrayList<User>();
-			
-			while(rs.absolute(index)) {
-				User user = new User();
-				user.setNum(rs.getInt("num"));
-				user.setId(rs.getString("id"));
-				user.setEmail(rs.getString("email"));
-				user.setName(rs.getString("name"));
-				user.setPhone(rs.getString("phone"));
-				user.setCarrier(rs.getString("carrier"));
-				user.setBirth(rs.getDate("birth"));
-				user.setAddress(rs.getString("address"));
-				user.setAddress(rs.getString("address"));
-				user.setZip(rs.getInt("zip"));
-				
-				userList.add(user);
-				
-				if(index < (start + limit))
-					index ++;
-				else
-					break;
-			}
-			return userList;
-			
-		}
-		catch (SQLException e)
-		{
-			System.out.println("select() Error : " + e);
-		}
-		finally
-		{
-			try
-			{
-				if(rs != null) rs.close();
-				if(st != null) st.close();
-				if(con != null) con.close();
-			}
-			catch (SQLException e)
-			{
-				e.printStackTrace();
-			}
-		}
-		return null;
-	}
 
 	@Override
 	public boolean update(User user) {
@@ -222,5 +161,63 @@ public class UserDAO implements IUserDAO
 		return false;
 	}
 
-	// ♡ 힛
+	@Override
+	public List<User> select(String items, String text, int pageNum) {
+		System.out.println("select() run...");
+		
+		List<User> userList = new ArrayList<User>();
+		String sql = "";
+		
+		int limit = 10;
+		int start = (pageNum - 1) * limit;
+		
+		String limitsql = " LIMIT "+ start + ", " + limit;
+		
+		try
+		{
+			sql = "SELECT * FROM user WHERE " + items + " LIKE '%" + text + "%' ORDER BY num DESC" + limitsql;
+			con = dataSource.getConnection();
+			st = con.prepareStatement(sql);
+			rs = st.executeQuery();
+			while(rs.next())
+			{
+				User u = new User();
+				u.setNum(rs.getInt("num"));
+				u.setId(rs.getString("id"));
+				u.setPw(rs.getString("pw"));
+				u.setEmail(rs.getString("email"));
+				u.setName(rs.getString("name"));
+				u.setPhone(rs.getString("phone"));
+				u.setCarrier(rs.getString("carrier"));
+				u.setBirth(rs.getDate("birth"));
+				u.setGender(rs.getBoolean("gender"));
+				u.setAddress(rs.getString("address"));
+				u.setZip(rs.getInt("zip"));
+				u.setProfileImg(rs.getString("profileImg"));
+				u.setComment(rs.getString("comment"));
+				u.setRegDate(rs.getDate("regDate"));
+				u.setUpdates(rs.getDate("updates"));
+				userList.add(u);
+			}
+		}
+		catch (SQLException e)
+		{
+			System.out.println("select() Error : " + e);
+		}
+		finally
+		{
+			try
+			{
+				if(rs != null) rs.close();
+				if(st != null) st.close();
+				if(con != null) con.close();
+			}
+			catch (SQLException e)
+			{
+				e.printStackTrace();
+			}
+		}
+		return userList;
+	}
+	
 }

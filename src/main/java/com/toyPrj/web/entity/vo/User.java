@@ -10,35 +10,35 @@ public class User
 	private String pw;
 	private String email;
 	private String name;
-//	private boolean gender;
-	private String phone; // 추가
-	private String carrier; // 추가
+	private String phone;
+	private String carrier;
 	private Date birth;
+	private boolean gender;
 	private String address;
 	private int zip;
-//	private String profileImg;
-//	private String comment;
+	private String profileImg;
+	private String comment;
 	private Date regDate;
 	private Date updates;
 	
 	public User() {}
 	
-	public User(int num, String id, String pw, String name, boolean gender, String phone, String carrier, Date birth, String address, int zip,
-			String email, String profileImg, String comment, Date regDate, Date updates) {
+	public User(int num, String id, String pw, String email, String name, String phone, String carrier, Date birth,
+			boolean gender, String address, int zip, String profileImg, String comment, Date regDate, Date updates) {
 		super();
 		this.num = num;
 		this.id = id;
 		this.pw = pw;
+		this.email = email;
 		this.name = name;
-//		this.gender = gender;
 		this.phone = phone;
 		this.carrier = carrier;
 		this.birth = birth;
+		this.gender = gender;
 		this.address = address;
 		this.zip = zip;
-		this.email = email;
-//		this.profileImg = profileImg;
-//		this.comment = comment;
+		this.profileImg = profileImg;
+		this.comment = comment;
 		this.regDate = regDate;
 		this.updates = updates;
 	}
@@ -75,13 +75,13 @@ public class User
 		this.name = name;
 	}
 
-//	public boolean isGender() {
-//		return gender;
-//	}
-//
-//	public void setGender(boolean gender) {
-//		this.gender = gender;
-//	}
+	public boolean isGender() {
+		return gender;
+	}
+
+	public void setGender(boolean gender) {
+		this.gender = gender;
+	}
 
 	public Date getBirth() {
 		return birth;
@@ -115,21 +115,21 @@ public class User
 		this.email = email;
 	}
 
-//	public String getProfileImg() {
-//		return profileImg;
-//	}
-//
-//	public void setProfileImg(String profileImg) {
-//		this.profileImg = profileImg;
-//	}
-//
-//	public String getComment() {
-//		return comment;
-//	}
-//
-//	public void setComment(String comment) {
-//		this.comment = comment;
-//	}
+	public String getProfileImg() {
+		return profileImg;
+	}
+
+	public void setProfileImg(String profileImg) {
+		this.profileImg = profileImg;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 
 	public Date getRegDate() {
 		return regDate;
@@ -162,4 +162,5 @@ public class User
 	public void setCarrier(String carrier) {
 		this.carrier = carrier;
 	}
+	
 }
